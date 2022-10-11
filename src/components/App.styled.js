@@ -8,7 +8,3 @@ export const Div = styled.div`
   border: 2px solid grey;
   border-radius: 6px;
 `;
-
-export const Title = styled.h2`
-  text-align: center;
-`;

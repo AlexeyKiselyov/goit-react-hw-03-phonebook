@@ -3,8 +3,10 @@ import { nanoid } from 'nanoid';
 import { Phonebook } from '../components/Phonebook/Phonebook';
 import { ContactList } from '../components/ContactList/ContactList';
 import { Filter } from '../components/Filter/Filter';
-import { Div, Title } from './App.styled';
+import { Section } from '../components/Section/Section';
+import { Div } from './App.styled';
 // ==============================
+
 export class App extends Component {
   state = {
     contacts: [
@@ -48,17 +50,18 @@ export class App extends Component {
 
     return (
       <Div>
-        <Title>Phonebook</Title>
-        <Phonebook onAddContact={this.onAddContact} />
+        <Section title="Phonebook">
+          <Phonebook onAddContact={this.onAddContact} />
+        </Section>
 
-        <Title>Contacts</Title>
-        <Filter onChangeFilter={this.onChangeFilter} />
-
-        <ContactList
-          contacts={contacts}
-          filter={filter}
-          onDeleteContact={this.onDeleteContact}
-        />
+        <Section title="Contacts">
+          <Filter onChangeFilter={this.onChangeFilter} />
+          <ContactList
+            contacts={contacts}
+            filter={filter}
+            onDeleteContact={this.onDeleteContact}
+          />
+        </Section>
       </Div>
     );
   }
