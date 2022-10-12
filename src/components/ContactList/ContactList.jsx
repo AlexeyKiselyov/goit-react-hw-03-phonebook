@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import {VscTrash} from 'react-icons/vsc';
 import { Contact, Ul, Button } from './ContactList.styled';
 // ===========================
 export const ContactList = ({ contacts, filter, onDeleteContact }) => {
@@ -20,6 +21,7 @@ export const ContactList = ({ contacts, filter, onDeleteContact }) => {
                 onClick={e => onDeleteContact(e)}
               >
                 Delete
+                <VscTrash/>
               </Button>
             </Contact>
           ))

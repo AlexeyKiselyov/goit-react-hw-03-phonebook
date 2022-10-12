@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import {VscAdd} from 'react-icons/vsc';
 import { Label, Input, Button } from './Phonebook.styled';
 // ==============================
 export class Phonebook extends Component {
@@ -55,7 +56,7 @@ export class Phonebook extends Component {
               placeholder="123-45-67"
             />
           </Label>
-          <Button type="submit">Add contact</Button>
+          <Button type="submit">Add contact <VscAdd/></Button>
         </form>
       </>
     );

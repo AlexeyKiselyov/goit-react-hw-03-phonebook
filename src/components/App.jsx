@@ -4,7 +4,7 @@ import { Phonebook } from '../components/Phonebook/Phonebook';
 import { ContactList } from '../components/ContactList/ContactList';
 import { Filter } from '../components/Filter/Filter';
 import { Section } from '../components/Section/Section';
-import { Div } from './App.styled';
+import { Box } from '../components/Box';
 // ==============================
 
 export class App extends Component {
@@ -49,7 +49,7 @@ export class App extends Component {
     const { contacts, filter } = this.state;
 
     return (
-      <Div>
+      <Box bg="background" my={6} mx="auto" py={5} px={6} maxWidth="420px" borderRadius="normal" border="normal">
         <Section title="Phonebook">
           <Phonebook onAddContact={this.onAddContact} />
         </Section>
@@ -62,7 +62,7 @@ export class App extends Component {
             onDeleteContact={this.onDeleteContact}
           />
         </Section>
-      </Div>
+      </Box>
     );
   }
 }

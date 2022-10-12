@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const Ul = styled.ul`
   margin: 0;
   padding: 0;
+
+  list-style: disc;
 `;
 
 export const Contact = styled.li`
@@ -22,6 +24,10 @@ export const Button = styled.button`
   min-width: 80px;
   height: 25px;
 
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.1;
@@ -33,12 +39,18 @@ export const Button = styled.button`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border-color: transparent;
-  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: scale, fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   &:hover,
   &:focus {
-    scale: 1.05;
+    scale: 1.04;
   }
+
   &:active {
     border-color: #2a2a2a;
+  }
+
+  &:hover svg {
+    fill: #2a2a2a;
   }
 `;
