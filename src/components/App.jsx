@@ -18,6 +18,21 @@ export class App extends Component {
     filter: '',
   };
 
+  componentDidUpdate(_, prevState){ 
+    if(prevState.contacts !== this.state.contacts){
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
+
+  componentDidMount(){
+    const localStorageGet = localStorage.getItem('contacts');
+    if(localStorageGet){
+      this.setState({
+        contacts: JSON.parse(localStorage.getItem('contacts'))
+      })
+    }
+  }
+
   onAddContact = newUser => {
     const uniqUserSearch = this.state.contacts.find(
       ({ name }) => name === newUser.name
